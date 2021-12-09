@@ -42,3 +42,49 @@ Tipos de banco de dados gratuitos:
 <br>Firebird
 <br>PostgreSQL
 
+
+## Iniciando no mundo do MySQL
+
+Surgiu em 1994 na suécia
+<br>Michael Widenius e David Axmark criaram um modelo gratuito baseado no modelo relacional
+<br>Grátis e Livre (cadastrado na GPL)
+
+O grupo MySQL foi comprado pela empresa Sun Microsystems
+<br>E a Sun foi comprada pela Oracle
+
+MySQL é usado por várias empresas famosas (Nasa, Google, Wikipedia, Adobe, Cisco, Ebay, todas as empresas de telecomunicações, Bradesco, Forças Armadas)
+
+Tem DDL - linguagem de definição
+<br>DLL - linguagem de manipulação
+<br>DQL - faz solicitações
+<br>DCL - controla
+<br>DTL - trata das transações (qualquer solicitação feita a um banco de dados e ele irá te atender da melhor forma possível)
+
+Seguindo o padrão D I C A  (características e uma boa transação)
+<br>Durabilidade (os dados se mantém mesmo depois de muito tempo)
+<br>Isolamento (toda a transação é isolada, podendo ocorrer 2 ao mesmo tempo, sem influenciar na outra)
+<br>Consistência (se tudo esta OK, o BD se mantém OK)
+<br>Atomicidade (Ou tudo dá certo ou retorna ao estado anteriormente consistente)
+
+No curso utilizamos o Wamp e acessamos no MySQL Workbench
+
+
+## Códigos Iniciais e Tipos primitivos
+
+Bancos de dados são conjuntos de tabelas e tabelas são conjuntos de registros e registros são compostos por campos
+
+<b>CREATE DATABASE</b> Cadastro;  //Cria BD
+<br>afetamos 1 linha, pois temos 1 bd novo.
+
+<b>USE</b> ...; (seleciona BD)
+<br><b>CREATE TABLE</b> pessoas (); //cria tabela
+<br><b>DESCRIBE</b> ... ; (descreve a tabela)
+
+Tipos primitivos do MySQL
+<br>Numérico (Inteiro - TinyIny/ SmallInt/ Int/ MediumInt/ BigInt, Real - Decimal/ Float/ Double/ Real, Logico - Bit/ Boolean)
+<br>Data/Tempo (Date/ DateTime/ TimeStamp/ Time/ Year)
+<br>Literal (Caractere - Char/ VarChar, Texto - TinyText/ MediumText/ MediumText/ LongText, Binário - TinyBlob/ Blob/ MediumBlob/ LongBlob, Coleção - Enum/ Set)
+<br>Espacial (Geometry/ Point/ Polygon/ MultiPolygon)
+
+
+
