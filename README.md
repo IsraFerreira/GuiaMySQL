@@ -81,10 +81,28 @@ Bancos de dados são conjuntos de tabelas e tabelas são conjuntos de registros 
 <br><b>DESCRIBE</b> ... ; (descreve a tabela)
 
 Tipos primitivos do MySQL
-<br>Numérico (Inteiro - TinyIny/ SmallInt/ Int/ MediumInt/ BigInt, Real - Decimal/ Float/ Double/ Real, Logico - Bit/ Boolean)
+<br>Numérico (Inteiro - TinyIny(3)/ SmallInt/ Int/ MediumInt/ BigInt, Real - Decimal/ Float/ Double/ Real, Logico - Bit/ Boolean)
 <br>Data/Tempo (Date/ DateTime/ TimeStamp/ Time/ Year)
 <br>Literal (Caractere - Char/ VarChar, Texto - TinyText/ MediumText/ MediumText/ LongText, Binário - TinyBlob/ Blob/ MediumBlob/ LongBlob, Coleção - Enum/ Set)
 <br>Espacial (Geometry/ Point/ Polygon/ MultiPolygon)
 
 
+
+## Estrutura melhorada da tabela inicial
+
+
+utf-8 - preparado para nossa linguagem acentuada
+</br><b>CREATE DATABASE cadastro DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;</b>  
+
+<b>DROP DATABASE</b> (apaga banco de dados)
+
+NOT NULL (precisa ser preenchido)
+</br>ENUM('M','F') - Só aceita o padrão que coloquei
+</br>DECIMAL (5,2) - Será criado um numero decimal onde haverão 5 casas, com 2 antes da vírgula e o resto depois  (total / antes da vírgula)
+</br>DEFAULT 'Brasil' (caso não seja preenchido, será Brasil)
+
+create table pessoas (nome varchar(30) NOT NULL, nascimento date, sexo enum('M','F'), peso decimal(5,2), altura decimal(3,2), nacionalidade varchar(20) DEFAULT 'Brasil') DEFAULT CHARSET = utf8;
+
+AUTO_INCREMENT - incrementa automaticamente
+</br>PRIMARY KEY (chave primária)
 
