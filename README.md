@@ -101,7 +101,7 @@ NOT NULL (precisa ser preenchido)
 </br>DECIMAL (5,2) - Será criado um numero decimal onde haverão 5 casas, com 2 antes da vírgula e o resto depois  (total / antes da vírgula)
 </br>DEFAULT 'Brasil' (caso não seja preenchido, será Brasil)
 
-create table pessoas (nome varchar(30) NOT NULL, nascimento date, sexo enum('M','F'), peso decimal(5,2), altura decimal(3,2), nacionalidade varchar(20) DEFAULT 'Brasil') DEFAULT CHARSET = utf8;
+create table pessoas (id int NOT NULL AUTO_INCREMENT, nome varchar(30) NOT NULL, nascimento date, sexo enum('M','F'), peso decimal(5,2), altura decimal(3,2), nacionalidade varchar(20) DEFAULT 'Brasil', PRIMARY KEY(id)) DEFAULT CHARSET = utf8;
 
 AUTO_INCREMENT - incrementa automaticamente
 </br>PRIMARY KEY (chave primária)
