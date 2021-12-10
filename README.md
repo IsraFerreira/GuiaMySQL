@@ -126,7 +126,7 @@ DDL - definição (ex: create database, create table)
 
 ## Alter Table e drop table
 
-ALTER TABLE pessoas ADD COLUMN profissao verchar (10);
+ALTER TABLE pessoas ADD COLUMN profissao varchar (10);
 <br>Altera a coluna pessoas adicionando a coluna profissão
 
 DROP COLUMN (elimina coluna da tabela)
@@ -150,7 +150,25 @@ ADD PRIMARY KEY(coluna);
 DROP TABLE (exclui estrutura da tabela)
 
 
-##
+## UPDATE, DELETE e TRUNCATE
+
+Manipulando registros / linhas / tuplas
+
+UPDATE (atualiza registro)
+<br>SET (colocar)
+<br>WHERE (escolhendo um campo para se basear)
+<br>LIMIT (limita quantas linhas são afetadas)
+
+UPDATE cursos SET nome = 'HTML' WHERE idcurso = 1 LIMIT 1;
+
+Para excluir uma linha podemos usar DELETE FROM (delimitando à aquela linha)
+<br>DELETE FROM cursos WHERE idcurso = 8;
+
+Também é possível remover todas as linhas da tabela
+<br>TRUNCATE cursos;
+
+
+## 
 
 
 
