@@ -87,7 +87,6 @@ Tipos primitivos do MySQL
 <br>Espacial (Geometry/ Point/ Polygon/ MultiPolygon)
 
 
-
 ## Estrutura melhorada da tabela inicial
 
 
@@ -105,4 +104,53 @@ create table pessoas (id int NOT NULL AUTO_INCREMENT, nome varchar(30) NOT NULL,
 
 AUTO_INCREMENT - incrementa automaticamente
 </br>PRIMARY KEY (chave primária)
+
+
+##  Inserção
+
+Insert into Insert into pessoas (id, nome, nascimento, sexo, peso, altura, nacionalidade) values ('1', 'Godofredo', '1984-01-02', 'M', '78.5', '1.83', 'Brasil');
+<br>Coloca dados na tabela
+
+DEFAULT - coloca o padrão no determinado campo
+<br>Insert into pessoas (id, nome, nascimento, sexo, peso, altura, nacionalidade) values (DEFAULT, 'Creusa', '1920-12-30', 'F', '50.2', '1.65', DEFAULT);
+
+Não precisa necessariamente colocar as colunas, caso os valores estejam em ordem certa, podemos utilizar apenas:
+<br>Insert into pessoas values (DEFAULT, 'Adalgiza', '1930-11-2', 'F', '63.2', '1.75', 'Irlanda');
+
+Podemos também fazer 1 Insert into para vários registros.
+<br>Insert into pessoas values (DEFAULT, 'Ana', '1975-12-22', 'F', '52.3', '1.45', 'EUA'), (DEFAULT, 'Pedro', '2000-07-15', 'M', '52.3', '1.45', 'Brasil'), (default, 'Maria', '1999-05-30', 'F', '75.9', '1.70', 'Portugal');
+
+DDL - definição (ex: create database, create table)
+<br>DML - Manipulação (insert into)
+
+
+## Alter Table e drop table
+
+ALTER TABLE pessoas ADD COLUMN profissao verchar (10);
+<br>Altera a coluna pessoas adicionando a coluna profissão
+
+DROP COLUMN (elimina coluna da tabela)
+<br>AFTER (coloca coluna depois de outra específica)
+<br>FIRST (coloca coluna no primeiro campo)
+<br>MODIFY (Modifica a coluna)
+
+ALTER TABLE pessoas ADD COLUMN profissao varchar(10) AFTER nome;
+
+CHANGE COLUMN (Muda o nome de uma coluna)
+
+Para mudar o nome de uma tabela é usado o comando:
+<br>ALTER TABLE pessoas RENAME TO gafanhotos;
+
+IF NOT EXISTIS / IF EXISTS (Funções boas para verificação)
+<br>UNIQUE (Faz com que os dados de uma coluna não possam ser repetidos)
+<br>UNSIGNED (sem sinal)
+
+ADD PRIMARY KEY(coluna);
+
+DROP TABLE (exclui estrutura da tabela)
+
+
+##
+
+
 
