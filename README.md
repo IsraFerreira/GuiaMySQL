@@ -168,7 +168,66 @@ Também é possível remover todas as linhas da tabela
 <br>TRUNCATE cursos;
 
 
-## 
+## Obtendo dados das tabelas
+
+No comando Select:
+<br>Podemos selecionar colunas em específico (mais de uma) ou * para todos
+<br>ORDER BY (ordena os elementos, podendo usar mais de um atributo de ordenação)
+<br>ASC - ascendente 
+<br>DESC - descendente (ordem inversa)
+<br>select ano, nome, carga from cursos order by ano, nome ASC;
+
+
+
+WHERE (linhas específicas)
+<br>Select * from cursos WHERE carga = '40' order by nome;
+
+Diferente  <> ou !=
+
+BETWEEN AND (entre uma coisa e outra)
+<br>Select nome, ano from cursos where ano between 2014 and 2016 order by ano desc, nome asc;
+
+IN (Valores específicos)
+<br>Select nome, ano from cursos where ano in (2014, 2016) order by ano;
+
+Operadores lógicos também podem ser usados
+<br>Select nome, carga, totaulas from cursos where carga > 35 and totaulas < 30 order by ano; (E)
+<br>Select nome, carga, totaulas from cursos where carga > 35 or totaulas < 30 order by ano;(OU)
+
+
+Seleção por Like (parecido)
+<br>p% - começando por P (nenhum ou vários caracteres)
+<br>%a% (a em qualquer lugar)
+<br>%p - P no final
+
+not like %a% (irá mostrar tudo o que não tem A no nome)
+
+select * from cursos where nome like 'ph%p_' ; (cursos que tenham seus nomes começados em PH, tenham algo ou nada no meio, terminem com p e tenham um caractere no final)
+<br>select * from cursos where nome like 'p_p%' ; (começam com p, tem um caractere depois, em seguida tem p e terminam com qualquer coisa)
+
+Distinção
+<br>SELECT DISTINCT (não busca repetidamente)
+<br>select distinct nacionalidade from gafanhotos order by nacionalidade;
+
+Agregação
+<br>count (*) - conta todos que fazem parte
+<br>select count(*) from cursos;
+<br>select count(*) from cursos where carga > 40;
+
+max() - mostra o maior valor
+<br>select max(carga) from cursos;
+<br>select max(totaulas) from cursos where ano = '2016';
+
+min() - mostra o menor valor
+<br>select nome, min(totaulas) from cursos where ano = '2016';
+
+sum() - somatório
+<br>select sum(totaulas) from cursos where ano = '2016';
+
+avg (tira a média)
+<br>select avg(totaulas) from cursos where ano = '2016';
+
+
 
 
 
