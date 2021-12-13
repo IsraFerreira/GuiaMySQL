@@ -244,4 +244,41 @@ Uma lista que mostra os gafanhotos que nasceram fora do Brasil, mostrando o paí
 
 
 
+## Relacionamento entre tabelas
+
+Entidade - contêiner onde vou colocar dados sobre alguma coisa ou pessoa (identicado)
+<br>Conteiner produto tem dados sobre produtos
+
+Atributos - dados que compões as entidades
+
+Conjunto de atributos vão identificar tuplas, registros que serão armazenados em entidades.
+
+Atributos chave primária - atributo que diferencia os registros e também serve para relacionar entidades
+
+Diagrama entidade relacionamento (DER)
+<br>2 Entidades (aluno - curso) e 1 relacionamento (assiste)
+<br>Aluno - assiste - curso
+<br>Curso - é assistido por - aluno
+
+Cardinalidade
+<br>1 aluno assiste n cursos
+<br>1 curso pode ser assistido por n alunos
+<br>Classificação (muitos pra muitos)
+<br>ex: Casamento (um pra um)
+<br>ex: funcionário - dependente (um pra muitos)
+
+Chave estrangeira - chave primária de um registro, que veio para outro registro
+
+Relacionamento de tabelas é trocar chaves
+
+1 pra 1 - pega a chave primaria do dependente e coloque na entidade dominante
+<br>1 pra muitos - pega a chave primária do 1 e coloca no muitos (dependente)
+<br>muitos pra muitos - o relacionamento vira uma entidade (com seus próprios atributos e com sua chave primária, criando dois mini relacionamentos) se tornando um conjunto <br>relacional, onde a entidade-relacionamento recebe as chaves primárias de ambos os lados como chaves estrangeiras.
+
+
+
+
+
+
+
 
