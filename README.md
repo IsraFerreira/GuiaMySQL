@@ -206,7 +206,7 @@ select * from cursos where nome like 'ph%p_' ; (cursos que tenham seus nomes com
 <br>select * from cursos where nome like 'p_p%' ; (começam com p, tem um caractere depois, em seguida tem p e terminam com qualquer coisa)
 
 Distinção
-<br>SELECT DISTINCT (não busca repetidamente)
+<br>SELECT DISTINCT (não busca repetidamente - considera apenas uma ocorrência)
 <br>select distinct nacionalidade from gafanhotos order by nacionalidade;
 
 Agregação
@@ -226,6 +226,20 @@ sum() - somatório
 
 avg (tira a média)
 <br>select avg(totaulas) from cursos where ano = '2016';
+
+
+
+Group By (cria agrupamentos com o que foi solicitado)
+<br>select carga, count(nome) from cursos group by carga;
+
+Having (usado na mesma coluna do group by, para fazer seleções)
+<br>select ano, count(*) from cursos group by ano having count(ano) >= 5 order by count(*) desc;
+
+Podemos colocar um select dentro de outro: 
+<br>select carga, count(*) from cursos where ano > 2015 group by carga having carga > (select avg(carga) from cursos);
+
+Uma lista que mostra os gafanhotos que nasceram fora do Brasil, mostrando o país de origem e o total de pessoas nascidas lá. Onde aparecem os países que tiverem mais de 3 <br>gafanhotos com essa nacionalidade.
+<br>select nacionalidade, count(*) from gafanhotos where nacionalidade != 'Brasil' group by nacionalidade having count(nacionalidade) > 3;
 
 
 
