@@ -276,6 +276,34 @@ Relacionamento de tabelas é trocar chaves
 <br>muitos pra muitos - o relacionamento vira uma entidade (com seus próprios atributos e com sua chave primária, criando dois mini relacionamentos) se tornando um conjunto <br>relacional, onde a entidade-relacionamento recebe as chaves primárias de ambos os lados como chaves estrangeiras.
 
 
+## Relacionamento entre tabelas / Junções
+
+Engine - máquina que irá criar registros (criação de tabelas)
+
+InnoDB / XtraDB - compatíveis com chaves estrangeiras
+
+Chave estrangeria não precisa ter o mesmo nome de onde ela veio, só precisa ter o mesmo tipo e tamanho
+
+ADD FOREIGN KEY (adicionando chave estrangeira)
+<br>alter table gafanhotos add foreign key(cursopreferido) references cursos(idcurso);
+
+
+JOIN / INNER JOIN - junta as tabelas (mostra apenas os que tem relação)
+<br>ON - realiza a relação
+<br>AS - referência (gafanhotos as g - depois de from e cursos as c depois de join)
+
+select gafanhotos.nome, gafanhotos.cursopreferido, cursos.nome, cursos.ano from gafanhotos join cursos on cursos.idcurso = gafanhotos.cursopreferido;
+
+select g.nome, c.nome, c.ano from gafanhotos as g join cursos as c on c.idcurso = g.cursopreferido;
+
+OUTER JOIN (mostra os que não tem relação também, porem precisa ser especificado com LEFT ou RIGHT)
+
+## Relacionamento entre tabelas de muitos pra muitos
+
+Colocando um join dentro de outro
+<br>Select g.nome, c.nome from gafanhotos g JOIN assiste a on g.id = a.idgafanhoto JOIN cursos c ON c.idcurso = a.idcurso order by g.nome;
+
+
 
 
 
